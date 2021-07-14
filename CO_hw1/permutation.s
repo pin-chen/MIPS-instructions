@@ -30,17 +30,17 @@ permutation:	slt	$t1, $t0, $s1		#if i >= k
 		sub	$t2, $s0, $t0		#$t2 = n - i
 		mul	$s2, $s2, $t2		#sum *= $t2
 		addi	$t0, $t0, 1		#i++
-		j permutation			#loop
+		j 	permutation		#loop
 
 # print the result of procedure prime on the console interfac
 		
-L:		li $v0, 4			# call system call: print string
-		la $a0, msg3			# load address of string into $a0
+L:		li 	$v0, 4			# call system call: print string
+		la 	$a0, msg3		# load address of string into $a0
 		syscall                 	# run the syscall
 		
-		move $a0, $s2			
-		li $v0, 1			# call system call: print integer
+		move 	$a0, $s2			
+		li 	$v0, 1			# call system call: print integer
 		syscall 			# run the syscall
 
-		li $v0, 10			# call system call: exit
+		li 	$v0, 10			# call system call: exit
   		syscall				# run the syscall
