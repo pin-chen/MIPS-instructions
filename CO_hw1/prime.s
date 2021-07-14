@@ -51,9 +51,9 @@ L1:		mul $t0, $t1, $t1		# $t0 = i * i
 		slt $t2, $a0, $t0 		# if(i * i > n) 
 		bne $t2, $zero, return1		#branch to return 1
 		#
-		div $a0, $t1
-		mfhi $t3
-		beq $t3, $zero, return0
+		div $a0, $t1			#a0 / t1 = x...y
+		mfhi $t3			#get y
+		beq $t3, $zero, return0		#if(n%i == 0) return 0;
 		#
 		addi $t1, $t1, 1		# i++
 		j L1
