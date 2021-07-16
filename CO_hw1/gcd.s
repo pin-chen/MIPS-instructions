@@ -1,3 +1,6 @@
+# Class: 109暑 計算機組織 蔡文錦
+# Author: 陳品劭 109550206
+# Date: 20210716
 .data
 msg1:	.asciiz "Please enter integer x: "
 msg2:	.asciiz "Please enter integer y: "

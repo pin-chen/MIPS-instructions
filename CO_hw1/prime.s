@@ -1,3 +1,6 @@
+# Class: 109暑 計算機組織 蔡文錦
+# Author: 陳品劭 109550206
+# Date: 20210716
 .data
 msg1:	.asciiz "Please input a number(>=1): "
 msg2:	.asciiz "It's a prime\n"
