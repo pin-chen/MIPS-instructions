@@ -13,6 +13,7 @@ main:
 		li      $v0, 4			# call system call: print string
 		la      $a0, msg1		# load address of string into $a0
 		syscall                 	# run the syscall
+		
 # read the input integer in $v0
  		li      $v0, 5          	# call system call: read integer
   		syscall                 	# run the syscall
@@ -23,7 +24,6 @@ main:
 		move 	$t0, $v0		# save return value in t0 (because v0 will be used by system call) 
 
 # print the result of procedure prime on the console interfac
-		
 		bne 	$t0, $zero, L		#if $t0 == 0 means not prime
 		
 		li      $v0, 4			# call system call: print string
@@ -44,11 +44,10 @@ exit:
 .text
 prime:		addi 	$sp, $sp, -8		# adiust stack for 2 items
 		sw 	$ra, 4($sp)		# save the return address
-		sw 	$a0, 0($sp)		# save the argument n
-		
+		sw 	$a0, 0($sp)		# save the argument n	
 		addi 	$t0, $zero, 1		# $t0 = 1
 		beq 	$v0, $t0, return0	# if n == 1 go to return 0
-		
+#	
 		addi 	$t1, $zero, 2		# $t1 = i = 2
 L1:		mul 	$t0, $t1, $t1		# $t0 = i * i
 		slt 	$t2, $a0, $t0 		# if(i * i > n) 
@@ -60,10 +59,11 @@ L1:		mul 	$t0, $t1, $t1		# $t0 = i * i
 		#
 		addi 	$t1, $t1, 1		# i++
 		j L1
-		
+#	
 return0:		addi 	$v0, $zero, 0		# return 0
 		addi 	$sp, $sp, 8		# pop 2 items off stack
 		jr 	$ra			# return to caller
+#		
 return1:		addi 	$v0, $zero, 1		# return 1
 		addi 	$sp, $sp, 8		# pop 2 items off stack
 		jr 	$ra			# return to caller
