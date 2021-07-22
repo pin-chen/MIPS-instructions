@@ -1,5 +1,5 @@
-# Class: 109´» ­pºâ¾÷²ÕÂ´ ½²¤åÀA
-# Author: ³¯«~Êo 109550206
+# Class: 109æš‘ è¨ˆç®—æ©Ÿçµ„ç¹” è”¡æ–‡éŒ¦
+# Author: é™³å“åŠ­ 109550206
 # Date: 20210716
 .data
 msg1:	.asciiz "Please input a number(>=1): "
